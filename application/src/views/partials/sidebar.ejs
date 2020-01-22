@@ -1,0 +1,104 @@
+<!-- views/partials/categories.ejs -->
+
+
+<div class="col-2 d-none d-lg-block side my-3">
+<!-- filter button -->
+    <div class="left-menu text-center pt-5 pb-5">
+        <div class="dropdown show">
+                <h4 class="pb-4">Filter Search</h2>
+
+            <form action="/search" method="GET">
+                
+                <input type="hidden" name="category" value="<%= searchCategory%>"></input>
+                <input type="hidden" name="search" value="<%= searchTerm%>"></input>
+                <% if (classId != undefined) { %>
+                    <input type="hidden" name="class" value="<%= classId%>"></input>
+                <% } %>
+                <select name="sort" aria-setsize="1" class="filterBtn">
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                
+                        <option class="dropdown-item" name="sort" value="1">Most Recent</option>
+                        <option class="dropdown-item" name="sort" value="2">Price: Low to High</option>
+                        <option class="dropdown-item" name="sort" value="3">Price: High to Low</option>
+                    </div>
+                </select>    
+                    <hr>
+                <button type="submit" class="btn bg-warning filterbtn">Filter</button>    
+
+            </form>
+
+
+            
+        </div>
+    </div>
+
+
+<!-- textbook search button-->
+    <div class="left-menu text-center pt-3">
+        <h4 class="pb-4">Textbook Search</h2>
+            <ul class="">
+                    <form method="GET" action="/search" class="form-inline search" style="display: block;  margin-left: auto;  margin-right: auto;">
+                <li>
+                    <select name="class" id="Department" onChange="changecat(this.value);">
+                        <option value="" disabled selected>Select</option>
+                        <% for (var i = 0; i < classesList.length; i++) { %>
+                            <option class="dropdown-item" value="<%= classesList[i].id %>" <% if (searchCategory == classesList[i].class) { %>selected
+                                    <% } %>
+                            ><%= classesList[i].class %></option
+                            >
+                        <% } %>
+                    </select>
+                    
+                    <input type="hidden" name="category" value="Textbooks"> </input>
+                    <input type="hidden" name="search" value= ""></input>
+                    <input type="hidden" name="sort" value="1"></input>
+
+                </li>
+                
+    
+                <hr>
+                <li>
+                    
+                        <button id="textbook" class="searchbtn btn bg-warning" type="submit">Search For Textbook</button>
+                    </form>
+                </li>
+
+
+            </ul>
+        </h4>
+    </div>
+
+
+    <!-- fake add -->
+    <div class="col p-0" id="sticky" >
+        <h3 class="text-center mt-5">YOUR AD HERE!</h3>
+            <img src="https://media.giphy.com/media/9Pmf3QJiDHwyftez6i/giphy.gif" style="
+            min-height: 60vh; width:100%"> 
+                </div>
+            </div>
+
+
+<script>
+    var departmentByCategory = {
+        BIOL: ["150 The World of Plants", "160 Marine Biology", "300 Nature Study", "326 Disease", "328 Human Anatomy", "355 Genetics", "435 Immunology", "458 Biometry", "461 Insect Taxonomy", "482 Ecology", "514 Plant Taxonomy", "525 Plant Physiology", "534 Wetland Ecology", "580 Limnology", "627 Biophysics"],
+        CHEM: ["101 Survey of Chemistry", "130 General Organic Chemistry", "233 Organic Chemistry I", "325 Inorganic Chemistry", "327 Practical GC and HPLC", "340 Biochemistry I", "341 Biochemistry II", "349 General Biochemistry", "420 Environmental Analysis", "422 Instrumental Analysis", "433 Advanced Organic Chemistry", "443 Biophysical Chemistry Laboratory", "680 Chemical Oceanography", "693 Cooperative Education Program", "699 Independent Study"],
+        CSC: ["203 JAVA Programming", "206 Python Programming", "208 C++ for Java Programmers", "220 Data Structures", "256 Machine Structures", "340 Programming Methodology", "413 Software Development", "415 Operating System Principles", "520 Theory of Computing", "615 UNIX Programming", "644 Computer Measurements", "645 Computer Networks", "648 Software Engineering", "658 Programming Cafe", "665 Artificial Intelligence"],
+        ERTH: ["110 Our Dynamic Earth", "115 History of Life", "160 Our Dynamic Weather", "170 Our Dynamic Ocean", "210 Physical Geology", "310 The Violent Earth", "330 California Water", "335 Global Warming", "400 Earth Systems I", "410 Volcanology", "425 Geomorphology", "444 Hydrogeology", "522 Geochemistry", "526 Ore Deposits", "610 Neotectonics"],
+        ENGR: ["100 Introduction to Engineering", "102 Statics", "201 Dynamics", "205 Electric Circuits", "235 Surveying", "290 Modular Elective", "295 Design Methodology", "302 Experimental Analysis", "356 Digital Design", "415 Mechatronics", "426 Steel Structures", "427 Wood Structures", "430 Soil Mechanics", "431 Foundation Engineering", "447 Control Systems"],
+        GEOG: ["102 The Human Environment", "205 Geographic Techniques", "301 Bay Area Environments", "314 Bioclimatology", "316 Biogeography", "317 Geography of Soils", "421 Future Environments", "425 Economic Geography", "427 Agriculture and Food Supply", "432 Urban Geography", "433 Urban Transportation", "437 Bicycle Geographies", "454 San Francisco on Foot", "575 Emerging China", "606 Cartography"],
+        MATH: ["110 Business Calculus", "199 Pre-Calculus", "226 Calculus I", "227 Calculus II", "228 Calculus III", "265 Advanced Number Systems", "300GW History of Mathematics", "314 Math Circle Seminar", "325 Linear Algebra", "335 Modern Algebra", "350 Geometry", "370 Real Analysis I", "400 Numerical Analysis", "420 Combinatorics", "435 Modern Algebra II"],
+        PHYS: ["101 Conceptual Physics", "111 General Physics I", "121 General Physics II", "220 General Physics with Calculus I", "230 General Physics with Calculus II", "240 General Physics with Calculus III", "320 Modern Physics I", "325 Modern Physics II", "330 Analytical Mechanics I", "430 Quantum Mechanics I", "431 Quantum Mechanics II", "440 Computational Physics", "480 Introduction to Optics & Photonics", "490 Physics Project Laboratory", "491GW Advanced Laboratory II"],
+        PSY: ["101 Psychology of Personal Development", "200 General Psychology", "300 Current Issues in Psychology", "320 Sex and Relationships", "330 Child Development", "371 Psychological Statistics", "430 Adolescent Psychology", "431 Developmental Psychology", "434 The Psychology of Aging", "435 Behavior Problems of Children", "440 Social Psychology", "441 The Psychology of the Family", "442 Health Psychology", "443 The Science of Happiness", "451 Theories of Personality"]
+    }
+
+    function changecat(value) {
+        if (value.length == 0) document.getElementById("class").innerHTML = "<option></option>";
+        else {
+            var catOptions = "";
+            for (categoryId in departmentByCategory[value]) {
+                catOptions += "<option>" + departmentByCategory[value][categoryId] + "</option>";
+            }
+            document.getElementById("class").innerHTML = catOptions;
+        }
+    }
+</script>

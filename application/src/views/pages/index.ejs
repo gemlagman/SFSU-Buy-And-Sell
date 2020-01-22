@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <% include ../partials/head %>
+</head>
+
+<body class="aboutbody">
+
+<!-- header for navbar -->
+<div class="container-fluid above-nav bg-warning m-0">
+    <div class="text-center m-0">
+        <h3 class="m-0">
+            SFSU Software Engineering Project CSC 648-848, Fall 2019. For
+            Demonstration Only
+        </h3>
+    </div>
+</div>
+<hr class="m-0">
+<!-- Nav bar with responsive toggle -->
+
+<nav class="team navbar navbar-expand-lg  navbar-dark">
+    <span id="logobtn">
+      <button
+              class="navbar-toggler bg-warning"
+              data-toggle="collapse"
+              data-target="#navbarCollapse"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a href="/" class="navbar-brand"><strong>TeamPage</strong></a>
+    </span>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <li class="nav-item">
+                <a href="/about" class="nav-link">TEAM</a>
+            </li>
+            <li class="nav-item">
+                <a href="/register" class="nav-link">LOGIN</a>
+            </li>
+            <li class="nav-item">
+                <a href="/register" class="nav-link">SIGNUP</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- intro-section -->
+<section id="inner-intro">
+    <div class="team container-fluid p-5">
+        <h1 class="text-center">
+            Welcome to our Team page, please see our team members below
+        </h1>
+    </div>
+    </div>
+</section>
+
+
+<!-- card for team members intro -->
+<section id="team-members">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-12 col-lg-4 mb-2">
+                <a href="./danabout" class="colorcard">
+                    <div class="card card1">
+                        <div class="card-body text-center pb-2" style="color: rgb(72, 70, 70)">
+                            <i class="fas fa-user-circle fa-5x"></i>
+                            <h3 class="m-3">Dan</h3>
+                            <h5>Group Lead</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-3 col-sm-12 mb-2">
+                <a href="./moniqueabout">
+                    <div class="card">
+                        <div class="card-body text-center pb-2" style="color: rgb(72, 70, 70)">
+                            <i class="fas fa-user-circle fa-5x"></i>
+                            <h3 class="m-3">Monique</h3>
+                            <h5>Front-end Lead</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-sm-12 mb-2">
+                <a href="./pramishabout">
+                    <div class="card">
+                        <div class="card-body text-center pb-2" style="color: rgb(72, 70, 70)">
+                            <i class="fas fa-user-circle fa-5x"></i>
+                            <h3 class="m-3">Pramish</h3>
+                            <h5>Front-end</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="col-lg-3 col-sm-12 mb-2">
+                <a href="./rayaabout">
+                    <div class="card">
+                        <div class="card-body text-center pb-2" style="color: rgb(72, 70, 70)">
+                            <i class="fas fa-user-circle fa-5x"></i>
+                            <h3 class="m-3">Raya</h3>
+                            <h5>Back-end Lead</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-sm-12 mb-2">
+                <a href="./gemabout">
+                    <div class="card">
+                        <div class="card-body text-center pb-2" style="color: rgb(72, 70, 70)">
+                            <i class="fas fa-user-circle fa-5x"></i>
+                            <h3 class="m-3">Gem</h3>
+                            <h5>GitHub Lead/Back-end</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer section -->
+<footer>
+    <%- include('../partials/footer', {"cp":"Copyrifght"}) %>
+</footer>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!-- <div class="container myPosts">
+  <h3 class=" text-center py-3">My Posts</h3>
+  <div class=""></div>
+</div> -->
+
+<!-- views/partials/listings.ejs -->
+
+<div class="overflow-auto myposts">
+    <span class="">
+        <h3 style="background-color: indigo; color: white;" class=" text-center py-3 sticky-top"><%= username %>'s Listings</h3>
+      </span>
+  <section id="cardss">
+   
+    <div class="row">
+      <% cards.forEach(function(cards){ %> <%- include('../partials/cards',
+      {cards: cards}); %> <% }); %>
+    </div>
+    <hr />
+  </section>
+</div>
+
+<% cards.forEach(function(cards){ %> <%- include('../partials/manageListing',
+{cards: cards}); %> <% }); %> <% cards.forEach(function(cards){ %> <%-
+include('../partials/contactSeller', {cards: cards}); %> <% }); %>

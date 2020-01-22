@@ -1,0 +1,490 @@
+html,
+body {
+  height: relative;
+  width: 100%;
+  background-color:#222324;
+}
+
+/* user account display */
+.user {
+  visibility: hidden;
+}
+
+.mainArea {
+  min-height: 100vh;
+}
+.container-fluid.centerArea{
+  max-width: 1800px;
+  margin: auto;
+}
+/* responsive screen sizes for intro-hero text */
+@media screen and (max-width: 794px ){
+  .hero-text{
+    font-size: 2.2em !important;
+  }
+}
+
+@media screen and (max-width: 715px ){
+  .hero-text{
+    font-size: 2.1em !important;
+  }
+}
+
+@media screen and (max-width: 490px ){
+  .hero-text{
+    font-size: 2.0em !important;
+  }
+}
+
+@media screen and (max-width: 320px ){
+  .hero-text{
+    font-size: 1.7em !important;
+  }
+}
+
+.inner-hero {
+  max-width: 1800px;
+  margin: auto;
+  height: 150px;
+  color: white;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.aboutbody {
+  background-color: white;
+}
+
+.header {
+  height: 100px;
+  background-color: indigo !important;
+}
+
+
+#logobtn {
+  display: flex;
+  width: auto;
+  padding-bottom: 10px;
+  margin: 0;
+}
+
+@media screen and (max-width: 776px){
+  #logobtn{
+    width: 100%;
+  }
+}
+
+.navbar-brand {
+  font-size: 30px;
+  padding: 0;
+  padding-left: 10px;
+  padding-right: 30px;
+  color: white !important;
+  margin: 0;
+}
+.nav-link {
+  color: white !important;
+  text-align: center;
+  margin: 5px;
+}
+
+/* user dropdown navlinks */
+a.dropdown-item {
+font-size: inherit !important;
+font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.dropdown-menu {
+  padding: 0 !important;
+}
+
+.navbar-nav a {
+  font-size: large;
+  font-family: 'Arial Black', Gadget, sans-serif;
+ 
+}
+
+.navbar-nav {
+  padding-left: 30px;
+  align-content: center;
+}
+
+.navbar {
+  background-color: indigo !important;
+  max-width: 1800px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+/* dropdown */
+select {
+  width: auto;
+  border: 1px solid #ccc;
+  height: 38px;
+  background: #ffc107;
+
+}
+
+.search{
+  flex-flow: nowrap;
+}
+.searchDiv input[type="text"]
+{
+width: 90%;
+color: #333;
+outline: none;
+}
+
+.searchDiv {
+  background-color: indigo;
+  padding-bottom: 10px;
+  padding-top: 0;
+  width: 100%;
+  position: relative;
+}
+
+
+
+#inner-intro {
+  background-color: indigo;
+  color: #fff;
+  min-height: 180px;
+}
+
+#team-members {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  height: 100%;
+  overflow: auto;
+  background-color: white;
+}
+
+#team-members .card {
+  margin: 2px;
+}
+
+.face-img {
+  height: 120px;
+  width: 120px;
+}
+
+.side {
+  background-color: white;
+  display: flex;
+  margin-left: 23px;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.pic {
+  width: 100%;
+  height: 250px;
+}
+
+.dynamicCard {
+  background: transparent;
+  margin-bottom: 20px;
+}
+
+#cardss {
+  background: white;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 30px;
+  height: 100%;
+}
+
+.mainCardBody {
+  padding-top: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.modal-footer > button{
+  justify-content: center !important;
+  align-content: center !important;
+  font-weight: 700;
+}
+
+.itemdescrip {
+display: flex;
+ align-items: flex-start;
+ justify-content: left;
+ 
+ flex-direction: column;
+}
+
+.modalbtn {
+  width: 100%;
+}
+
+h6.itemPrice  {
+  width: 100%;
+  text-align: start;
+  padding: 16px;
+  margin: 0;
+  color: mediumseagreen;
+}
+
+p.itemDescription{
+  width: 100%;
+  text-align: start;
+  padding: 16px;
+  margin: 0;
+}
+
+.inner-post-info{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 50%;
+  margin: auto;
+  padding: 5px;
+}
+
+.outer-post-info{
+  padding: 15px;
+  border: 1px solid #c4c4c4;
+  margin: 10px;
+}
+
+.itemPrice {
+  color: mediumseagreen;
+}
+
+
+
+/* ------------------- */
+
+/* media query for seach bar responsiveness */
+@media screen and (max-width: 991px){
+  .navbar {
+    flex-flow: nowrap;
+  }
+}
+
+@media screen and (max-width: 776px){
+  .navbar {
+    flex-flow: wrap;
+  }
+} 
+
+/* for signup */
+.modal-header {
+border-bottom: 0;
+}
+
+/* media query for view item */
+@media screen and (max-width: 991px){
+  .mainpic {
+    width: 498px;
+  }
+} 
+
+@media screen and (max-width: 575px){
+  .mainpic {
+    width: 557px;
+  }
+}
+@media screen and (max-width: 500px){
+  .mainpic {
+    width: 482px;
+  }
+}
+@media screen and (max-width: 414px){
+  .mainpic {
+    width: 395px;
+  }
+}
+@media screen and (max-width: 411px){
+  .mainpic {
+    width: 393px !important;
+  }
+}
+@media screen and (max-width: 375px){
+  .mainpic {
+    width: 357px !important;
+  }
+}
+@media screen and (max-width: 360px){
+  .mainpic {
+    width: 342px !important;
+  }
+}
+@media screen and (max-width: 320px){
+  .mainpic {
+    width: 302px !important;
+  }
+}
+
+@media screen and (max-width: 301px){
+  .mainpic {
+    width: 283px !important;
+  }
+}
+
+
+/* -------------------------  msg.css  --------------------- */
+.colorbg{
+  background: white;
+}
+
+.MessageBox{max-width:1170px; margin:auto;}
+img{ max-width:100%;}
+.inbox_people {
+background: #f8f8f8 none repeat scroll 0 0;
+float: left;
+overflow: hidden;
+width: 40%; border-right:1px solid #c4c4c4;
+}
+.inbox_msg {
+border: 1px solid #c4c4c4;
+clear: both;
+overflow: hidden;
+}
+.top_spac{ margin: 20px 0 0;}
+
+
+.recent_heading {float: left; width:40%;}
+.srch_bar {
+display: inline-block;
+text-align: right;
+width: 60%;
+}
+.headind_srch{ padding:10px 29px 10px 20px; overflow:hidden; border-bottom:1px solid #c4c4c4;}
+
+.recent_heading h4 {
+color: #05728f;
+font-size: 21px;
+margin: auto;
+}
+.srch_bar input{ border:1px solid #cdcdcd; border-width:0 0 1px 0; width:80%; padding:2px 0 4px 6px; background:none;}
+.srch_bar .input-group-addon button {
+background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+border: medium none;
+padding: 0;
+color: #707070;
+font-size: 18px;
+}
+.srch_bar .input-group-addon { margin: 0 0 0 -27px;}
+
+.chat_ib h5{ font-size:15px; color:#464646; margin:0 0 8px 0;}
+.chat_ib h5 span{ font-size:13px; float:right;}
+.chat_ib p{ font-size:14px; color:#989898; margin:auto}
+.chat_img {
+float: left;
+width: 11%;
+}
+.chat_ib {
+float: left;
+padding: 0 0 0 15px;
+width: 88%;
+}
+
+.chat_people{ overflow:hidden; clear:both;}
+.chat_list {
+border-bottom: 1px solid #c4c4c4;
+margin: 0;
+padding: 18px 16px 10px;
+}
+.inbox_chat { height: 550px; overflow-y: scroll;}
+
+.active_chat{ background:#ebebeb;}
+
+.incoming_msg_img {
+display: inline-block;
+width: 6%;
+}
+.received_msg {
+display: inline-block;
+padding: 0 0 0 10px;
+vertical-align: top;
+width: 92%;
+}
+.received_withd_msg p {
+background: #ebebeb none repeat scroll 0 0;
+border-radius: 3px;
+color: #646464;
+font-size: 14px;
+margin: 0;
+padding: 5px 10px 5px 12px;
+width: 100%;
+}
+.time_date {
+color: #747474;
+display: block;
+font-size: 12px;
+margin: 8px 0 0;
+}
+.received_withd_msg { width: 100%;}
+.mesgs {
+float: left;
+padding: 30px 15px 0 25px;
+width: 60%;
+}
+
+.sent_msg p {
+background: #05728f none repeat scroll 0 0;
+border-radius: 3px;
+font-size: 14px;
+margin: 0; color:#fff;
+padding: 5px 10px 5px 12px;
+width:100%;
+}
+.outgoing_msg{ overflow:hidden; margin:26px 0 26px;}
+.sent_msg {
+float: right;
+width: 100%;
+}
+.input_msg_write input {
+background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+border: medium none;
+color: #4c4c4c;
+font-size: 15px;
+min-height: 48px;
+width: 100%;
+}
+
+.type_msg {border-top: 1px solid #c4c4c4;position: relative;}
+.msg_send_btn {
+background: #05728f none repeat scroll 0 0;
+border: medium none;
+border-radius: 50%;
+color: #fff;
+cursor: pointer;
+font-size: 17px;
+height: 33px;
+position: absolute;
+right: 0;
+top: 11px;
+width: 33px;
+}
+.messaging { padding: 0 0 50px 0;}
+.msg_history {
+height: 516px;
+overflow-y: auto;
+}
+
+.MessageBox{
+  padding-top: 100px;
+}
+
+/* ----------------------------------------------------------------*/ 
+
+
+/*  css for textbook search feature*/
+select#class, #Department, button#searchbtn.textbook.btn.bg-warning
+{
+  width: 100%;
+}
+

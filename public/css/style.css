@@ -1,0 +1,51 @@
+html,
+body {
+  height: 100%;
+}
+
+.navbar-brand {
+  font-size: x-large;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.navbar {
+  background-color: #450c57 !important;
+}
+.navbar-nav {
+  font-size: large;
+  font-family: 'Arial Black', Gadget, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-nav a.nav-link {
+  margin: 0;
+}
+
+#inner-intro {
+  background-color: #450c57;
+  color: #fff;
+  min-height: 180px;
+}
+
+#team-members {
+  margin-top: 80px;
+  height: 100%;
+  overflow: auto;
+}
+
+#team-members .card {
+  margin: 2px;
+}
+
+.face-img {
+  height: 120px;
+  width: 120px;
+}
+
+#footer {
+  background-color: #450c57;
+  color: #fff;
+  position: relative;
+  height: 100px;
+  clear: both;
+}

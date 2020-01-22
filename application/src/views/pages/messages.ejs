@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include ../partials/head %>
+    <title>DashBoard</title>
+  </head>
+
+  <body>
+    <header>
+      <!-- navbar -->
+      <%- include('../partials/header', {'categoriesList':categoriesList,
+      'searchTerm': searchTerm, 'searchCategory': searchCategory, 'isLoggedIn': isLoggedIn}) %>
+    </header>
+
+    <!-- navbar -->
+
+    <!--  //  This partial is for the messages page that holds the implentation of the email messages for the //  users to find their sent or received messages from users trying to contact them on their posted //  items
+ -->
+
+    <section class="colorbg">
+      <!-- container for lists of users posts -->
+
+      <div class="container-fluid ">
+        <div class="container-fluid p-0">
+          <%-include('../partials/myPosts', {'cards' : cards, 'username':
+          username})%>
+        </div>
+        <div class="container-fluid">
+          <!-- container for messages -->
+          <%-include('../partials/msgBox', {'emails': emails , 'userId': userId,
+          'username': username})%> <% emails.forEach(function(emails){ %> <%-
+          include('../partials/replyBox', {emails: emails}); %> <% }); %>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <%- include('../partials/footer', {"cp":"Copyright"}) %>
+    </footer>
+  </body>
+</html>

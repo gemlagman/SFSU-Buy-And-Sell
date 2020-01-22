@@ -1,0 +1,48 @@
+<!-- views/partials/email.ejs -->
+<!-- this is the email template for the list emails to be shown in the inbox -->
+
+<div
+  id="message-<%= emails.id %>"
+  class="chat_people"
+  onclick="emailSelected(this)"
+>
+  <div class="chat_img">
+    <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil" />
+  </div>
+  <div class="chat_ib" id="chat-list">
+    <h5>
+      <%= emails.sender %>
+      <span class="chat_date"><%= emails.publishedAt %></span>
+    </h5>
+  </div>
+</div>
+<hr />
+
+<script type="text/javascript">
+  function emailSelected(clickedDiv) {
+    let _id = clickedDiv.id;
+    _id = _id.replace("message-", "");
+    console.log(_id);
+    fetch("http://localhost:3000/messages/" + _id)
+      .then(data => {
+        return data.json();
+      })
+      .then(json_data => {
+        console.log(json_data);
+      })
+      .catch(err => {});
+    // ("messageRoutes.ejs", function (res) {
+    //   var str = $("#test").html();
+    //   var data = {emails:res};
+    //   var rendered = new EJS({test:str}).render(data);
+    //   $("#mesgs").html(rendered);
+    // })
+  }
+</script>
+
+<script id="test" type="text/x-ejs-template">
+  <% for (var i =0; i <emails.length; i++) { %>
+    <h1>by: <%= emails[i].sender%></h1>
+    <p><%= emails[i].message%></p>
+  <%}%>
+</script>

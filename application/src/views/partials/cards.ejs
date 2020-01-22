@@ -1,0 +1,17 @@
+<!-- views/partials/cards.ejs -->
+
+<div class="cardLook col-sm-6 col-md-4 col-lg-3 col-6">
+
+    <div class="card dynamicCard text-center">
+        <img src="<%= cards.image %>" class="card-img-top pic" alt=""/>
+        <div class="card-body mainCardBody">
+            <h5 class="m-0 mt-1"><%= cards.title %></h5>
+            <p class="m-0 text-muted">$<%= cards.price %></p>
+            <button class="btn bg-warning m-0" style="width: 100%;"
+                    data-toggle="modal" data-target="#viewItem-<%= cards.id%>">
+                View
+            </button>
+        </div>
+    </div>
+</div>
+

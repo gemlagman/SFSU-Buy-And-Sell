@@ -1,0 +1,109 @@
+<!-- views/partials/header.ejs -->
+
+<!-- header for navbar -->
+<div class="container-fluid above-nav bg-warning m-0">
+    <div class="text-center m-0">
+        <h3 class="m-0">
+            SFSU Software Engineering Project CSC 648-848, Fall 2019. For
+            Demonstration Only
+        </h3>
+    </div>
+</div>
+
+<!-- Nav bar with responsive toggle -->
+
+<nav class="navbar navbar-expand-lg  navbar-light  mb-3" >
+  <span id="logobtn">
+    <button
+            class="navbar-toggler bg-warning"
+            data-toggle="collapse"
+            data-target="#navbarCollapse"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a href="/" class="navbar-brand"><strong>SFSU BUY AND SELL</strong></a>
+  </span>
+
+    <div class="searchDiv">
+        <!-- seach bar -->
+        <form method="GET" action="/search" class="form-inline search">
+
+            <div class="dropdown">
+
+                <select name="category" aria-setsize="1" value="<%= searchCategory %>">
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <option class="dropdown-item" value="All" <% if (searchCategory == 'All') { %>selected
+                                <% } %>
+                        >All
+                        </option>
+                        <% for (var i = 0; i < categoriesList.length; i++) { %>
+                            <option class="dropdown-item" value="<%= categoriesList[i].name %>" <% if (searchCategory == categoriesList[i].name) { %>selected
+                                    <% } %>
+                            ><%= categoriesList[i].name %></option
+                            >
+                        <% } %>
+                    </div>
+                </select>
+            </div>
+
+            <input
+                    id="search"
+                    name="search"
+                    class="form-control"
+                    type="text"
+                    value="<%= searchTerm %>"
+                    placeholder="Search"
+                    maxlength="40"
+            />
+
+            <input type="hidden" name="sort" value= "1"></input>
+
+            <button id="searchbtn" class="btn bg-warning" type="submit">Search</button>
+        </form>
+    </div>
+
+
+    <div class="">
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto">
+                
+                <li class="nav-item">
+                    <a href="./sell" class="nav-link">Sell</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/about" target="_blank" class="nav-link">Team</a>
+                </li>
+
+
+               <% if(isLoggedIn) {%>
+                    <li class="nav-item user dropleft">
+                            <a href="" target="_blank" class="nav-link dropdown-toggle " type="button" id="dropdownMenuButton" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                               aria-expanded="false"><i class=" fas fa-user fa-2x "></i></a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="/dashboard">Dashboard</a>
+                                <a class="dropdown-item bg-light" href="/logout">LogOut</a>
+        
+                            </div>
+                        </li>
+                
+               <%} else{%>
+                    <li class="nav-item loginButton">
+                            <a href="#login" data-toggle="modal" role="button" style="border: 2px solid #ffc107; border-radius: 5px;" class="nav-link ">Login<span style="color: #ffc107">/</span>SignUp</a>
+                        </li>
+               <% }%>
+
+               
+
+
+                <!-- <li class="nav-item">
+                  <a href="#" class="nav-link">SIGNUP</a>
+                </li> -->
+            </ul>
+        </div>
+    </div>
+
+</nav>
+
+</div>
+
+<% include ../partials/login %>

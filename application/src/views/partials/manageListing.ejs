@@ -1,0 +1,47 @@
+<!-- /views/partials/viewItem.ejs -->
+
+<div class="modal fade text-dark" id="viewItem-<%= cards.id %>">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content m-0 p-0">
+                <div class="modal-body p-0">
+                    <div class="modalCard row">
+    
+                        <div class="col-lg-6 col-sm-12 p-0 m-0">
+                            <div class="row justify-content-center">
+    
+                                <div class="mainpic">
+                                    <img src="<%= cards.image %>" style="height: 400px; width: 100%;" alt="">
+    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="itemdescrip">
+                                <div class="modal-header w-100">
+                                    <h2 class="modal-title">
+                                        <%= cards.title %>
+                                        </h5>
+                                        <button class="close" data-dismiss="modal">
+                                            <span>&times;</span>
+                                        </button>
+                                </div>
+                                <h6 class="itemPrice">$<%= cards.price %></h6>
+                                <p class="itemDescription"><%= cards.description %></p>
+                            </div>
+                            <div class="modal-footer btn-block">
+                                <form action="/updateListing" method="post">
+                                    
+                                    <input type="hidden" name="listingId" value="<%= cards.id %>" > <% cards.id %></input>
+                                    <button class="btn btn-warning btn-block" type="submit">
+                                        Mark as Sold
+                                    </button>
+                                    <button class="btn btn-warning btn-block"  type="submit" formaction="/deleteListing"> Delete </button>
+                                </form>    
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

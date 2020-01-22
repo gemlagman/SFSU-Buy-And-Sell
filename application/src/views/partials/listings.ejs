@@ -1,0 +1,23 @@
+<!-- views/partials/listings.ejs -->
+
+<div class=" mainArea col my-3">
+  <section id="cardss">
+    <span class="my-4">
+      <% if (cards.length > 0) { %>
+      <h2 class="m-0"><%= searchCategory %></h2>
+      <% } else { %>
+      <h2 class="m-0">No Results</h2>
+      <% } %>
+      <!-- <a class="ml-4" href="#">view more</a>-->
+    </span>
+    <div class="row">
+      <% cards.forEach(function(cards){ %> <%- include('../partials/cards',
+      {'cards': cards}); %> <% }); %>
+    </div>
+    <hr />
+  </section>
+</div>
+
+<% cards.forEach(function(cards){ %> <%- include('../partials/viewItem', {cards:
+cards}); %> <% }); %> <% cards.forEach(function(cards){ %> <%-
+include('../partials/contactSeller', {cards: cards}); %> <% }); %>
